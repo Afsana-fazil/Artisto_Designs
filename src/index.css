@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 md:px-6 max-w-[1400px] mx-auto;
+  }
+  
+  .section {
+    @apply py-12 md:py-20;
+  }
+  
+  .section-title {
+    @apply font-poppins text-4xl md:text-5xl font-bold mb-4 text-foreground;
+  }
+  
+  .section-subtitle {
+    @apply font-inter text-xl md:text-2xl text-muted-foreground mb-6 md:mb-10;
+  }
+  
+  .button-primary {
+    @apply bg-artisto-royalblue text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all;
+  }
+  
+  .card-shadow {
+    @apply shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .nav-link {
+    @apply relative text-white hover:text-blue-700 transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-artisto-royalblue after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 hover:after:bg-blue-900;
+  }  
+  
+  .active-nav-link {
+    @apply text-artisto-royalblue after:scale-x-100;
+  }
+}
+
+@layer utilities {
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .blue-gradient {
+    background: linear-gradient(90deg, #0057B8 0%, #33C3F0 100%);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-artisto-royalblue to-artisto-skyblue;
+  }
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}

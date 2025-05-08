@@ -154,7 +154,7 @@ const CarouselContent = React.forwardRef<
           }
         }}
         className={cn(
-          "flex",
+          "flex flex-wrap xl:flex-nowrap justify-center gap-5",
           orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
           className
         )}

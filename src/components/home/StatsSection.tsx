@@ -23,10 +23,10 @@ const StatsSection = () => {
     },
     { 
       icon: Award, 
-      count: 1, 
+      count: 13, 
       suffix: "+", 
-      label: "Year of Experience", 
-      delay: 400,
+      label: "Month of Experience", 
+      delay: 100,
       color: "text-blue-800", 
     },
   ];

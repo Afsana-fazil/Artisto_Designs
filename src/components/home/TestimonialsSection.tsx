@@ -13,6 +13,7 @@ const testimonials = [
   {
     id: 1,
     name: "Yasir Muhammed",
+    image: "/images/Yasir.png",
     company: "Founder and CEO of Whoyer",
     text: "Working with Artisto Designs has been an absolute game-changer for us at Whoyer. Their creativity, attention to detail, and commitment to excellence are unmatched. Every project they handled for us reflected our brand vision perfectly, and the turnaround time was impressive. I highly recommend Artisto to any company looking to elevate their branding and design.",
     rating: 5
@@ -20,6 +21,7 @@ const testimonials = [
   {
     id: 2,
     name: "Shravan Narayan",
+    image: "/images/Shravan.png",
     company: "Founder and CEO of Code Cave",
     text: "Artisto Designs truly understands how to bring ideas to life. From our website UI to marketing materials, every piece of work they delivered was world-class. Their team is professional, responsive, and genuinely passionate about design. Choosing Artisto was one of the best decisions we made for our brand's visual identity.",
     rating: 5
@@ -27,13 +29,15 @@ const testimonials = [
   {
     id: 3,
     name: "Azvan Sait",
+    image: "/images/Azvan.png",
     company: "Founder and CEO of Nexift",
     text: "Artisto Designs exceeded all our expectations. Their designs are not just visually stunning but also strategically crafted to match our business goals. Their collaborative approach made the entire process smooth and exciting. We're proud to have partnered with Artisto Designs and look forward to many more projects together.",
     rating: 5
   },
   {
     id: 4,
-    name: "Adhil Muhamed",
+    name: "Adhil Muhammad",
+    image: "/images/Adhil.png",
     company: "Founder and CEO of Aidmak",
     text: "Artisto Designs brought our vision at Aidmak to life with creativity, precision, and style. Their ability to understand our needs and translate them into powerful designs made a huge impact on our brand presence. Working with Artisto was effortless and inspiring — they're not just designers; they're true creative partners.",
     rating: 5
@@ -81,10 +85,11 @@ const TestimonialsSection = () => {
           >
             <CarouselContent>
               {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={testimonial.id} className="md:basis-3/4 lg:basis-2/5 xl:basis-1/3">
                   <Card className="bg-white border border-gray-100 shadow-lg mx-2">
                     <CardContent className="p-6">
                       <div className="flex gap-1 mb-4">
+                        <img src="" alt="" />
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star
                             key={i}
@@ -93,9 +98,12 @@ const TestimonialsSection = () => {
                         ))}
                       </div>
                       <p className="text-gray-700 mb-4">{testimonial.text}</p>
-                      <div>
-                        <h4 className="font-semibold text-lg">{testimonial.name}</h4>
-                        <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                      <div className="flex gap-2 items-center">
+                        <img src={testimonial.image} alt={testimonial.name} className="w-14 rounded-full" />
+                        <span>
+                          <h4 className="font-semibold text-lg">{testimonial.name}</h4>
+                          <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                        </span>
                       </div>
                     </CardContent>
                   </Card>
